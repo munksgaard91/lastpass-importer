@@ -69,6 +69,8 @@ h2 { font-size: 18px; margin: 2px 0 8px; font-weight: 700; }
 p { margin: 0 0 10px; }
 ol.sub { margin: 0 0 10px; padding-left: 20px; }
 ol.sub li { margin-bottom: 4px; }
+.subnote { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+.subnote b { color: var(--ink); margin-right: 4px; }
 .path { font-weight: 600; }
 .drop {
   display: block;
@@ -102,6 +104,18 @@ button {
 }
 button.primary { background: var(--blue); color: var(--bg); }
 button.primary:hover { background: var(--blue-dark); }
+a.go {
+  display: inline-block;
+  margin: 4px 0 16px;
+  background: var(--blue);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+}
+a.go:hover { background: var(--blue-dark); }
+a.go:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 button.plain { background: none; color: var(--blue); padding: 12px 8px; text-decoration: underline; }
 button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 details { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
@@ -128,10 +142,12 @@ details ul { margin: 8px 0 0; padding-left: 20px; }
     <li>
       <h2>Eksportér fra LastPass</h2>
       <ol class="sub">
-        <li>Log ind på LastPass, og gå til <span class="path">Advanced Options → Export</span>.</li>
-        <li>LastPass sender dig en mail. Bekræft eksporten i mailen.</li>
-        <li>Gå tilbage til LastPass, og tryk <span class="path">Export</span> igen.</li>
-        <li>Skriv dit LastPass master password.</li>
+        <li>Klik på LastPass-ikonet i Chrome (din extension).</li>
+        <li>Vælg <span class="path">Account → Fix a problem yourself</span>.</li>
+        <li>Vælg <span class="path">Export Vault Items → Export Data for use anywhere</span>.
+          <div class="subnote"><b>3.1</b> Får du en mail fra LastPass, så godkend den, og start forfra fra punkt 1.</div>
+        </li>
+        <li>Skriv dit LastPass master password, og tryk <span class="path">Continue</span>.</li>
         <li>Gem filen på din computer.</li>
       </ol>
     </li>
@@ -167,11 +183,14 @@ details ul { margin: 8px 0 0; padding-left: 20px; }
 
     <li>
       <h2>Importér i Bitwarden</h2>
+      <p>Brug Bitwarden i browseren, ikke Chrome-udvidelsen.</p>
+      <a class="go" href="https://vault.bitwarden.com/#/tools/import" target="_blank" rel="noopener noreferrer">Åbn import i Bitwarden</a>
       <ol class="sub">
-        <li>Gå til <span class="path">Indstillinger → Import</span> i Bitwarden.</li>
+        <li>Log ind, hvis du bliver bedt om det. Lander du ikke på importsiden, så gå til <span class="path">Tools → Import</span>.</li>
         <li>Sæt <span class="path">Filformat</span> til <span class="path">LastPass</span>, og lad resten stå urørt.</li>
         <li>Tryk <span class="path">Vælg fil</span>, og vælg den fil, du lige har klargjort.</li>
         <li>Tryk <span class="path">Import</span>.</li>
+        <li>Får du vist, hvor mange mapper og passwords der er importeret, er du færdig og har nu alle dine passwords i Bitwarden.</li>
       </ol>
       <p class="note">Slet begge filer bagefter. De indeholder dine passwords i klartekst.</p>
     </li>
