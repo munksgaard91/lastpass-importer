@@ -39,7 +39,7 @@ body {
   font-size: 16px;
   line-height: 1.55;
 }
-main { max-width: 640px; margin: 0 auto; padding: 48px 24px 72px; }
+main { max-width: 880px; margin: 0 auto; padding: 48px 24px 72px; }
 .brand { font-weight: 700; color: var(--blue); font-size: 15px; margin: 0 0 40px; }
 h1 { font-size: 30px; line-height: 1.2; margin: 0 0 40px; font-weight: 700; }
 ol.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
@@ -123,7 +123,8 @@ summary { cursor: pointer; }
 details ul { margin: 8px 0 0; padding-left: 20px; }
 .msg-ok { color: var(--ok); font-weight: 600; }
 .msg-err { color: var(--warn); font-weight: 600; }
-.note { margin-top: 28px; color: var(--muted); font-size: 14px; }
+.note { margin-top: 28px; color: #c62828; font-weight: 700; }
+@media (prefers-color-scheme: dark) { .note { color: #ff6b6b; } }
 [hidden] { display: none !important; }
 @media (max-width: 480px) {
   main { padding-top: 32px; }
@@ -192,7 +193,7 @@ details ul { margin: 8px 0 0; padding-left: 20px; }
         <li>Tryk <span class="path">Import</span>.</li>
         <li>Får du vist, hvor mange mapper og passwords der er importeret, er du færdig og har nu alle dine passwords i Bitwarden.</li>
       </ol>
-      <p class="note">Slet begge filer bagefter. De indeholder dine passwords i klartekst.</p>
+      <p class="note">🚨 Slet begge filer bagefter. De indeholder dine passwords.</p>
     </li>
   </ol>
 </main>
